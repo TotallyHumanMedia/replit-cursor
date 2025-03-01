@@ -2,9 +2,18 @@ from flask import Flask, render_template, request
 from flask_socketio import SocketIO, emit
 import os
 import uuid
+from flask_limiter import Limiter
+from flask_limiter.util import get_remote_address
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'secret!'
+
+limiter = Limiter(
+    app,
+    key_func=get_remote_address,
+    default_limits=["200 per minute"]
+)
+
 socketio = SocketIO(app, cors_allowed_origins="*")
 
 # Store connected users
