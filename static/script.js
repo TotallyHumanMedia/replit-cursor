@@ -29,7 +29,7 @@ document.addEventListener('mousemove', (e) => {
 
 // Throttle function to limit updates
 let lastSendTime = 0;
-const throttleInterval = 20; // ms between updates
+const throttleInterval = 100; // ms between updates
 
 function throttledSend(x, y) {
     const now = Date.now();
