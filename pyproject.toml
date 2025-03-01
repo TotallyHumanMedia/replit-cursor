@@ -1,0 +1,15 @@
+[tool.poetry]
+name = "cursor-sharing"
+version = "0.1.0"
+description = "Real-time cursor sharing app"
+
+[tool.poetry.dependencies]
+python = "^3.8"
+flask = "^2.0.1"
+flask-socketio = "^5.1.1"
+gunicorn = "^20.1.0"
+eventlet = "^0.33.0"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
