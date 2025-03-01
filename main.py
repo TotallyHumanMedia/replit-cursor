@@ -9,8 +9,8 @@ app = Flask(__name__)
 app.config['SECRET_KEY'] = 'secret!'
 
 limiter = Limiter(
-    app,
     key_func=get_remote_address,
+    app=app,
     default_limits=["200 per minute"]
 )
 
